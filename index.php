@@ -6,35 +6,37 @@
 			<div id="filtro">
 				<h4 class="text-center">Filtro de estádios</h4>
 				<div class="container border border-dark p-3 text-center" id="opcoes">
-					Filtrar pelo time do estádio: <select name="time">
+				
+					Filtrar pelo nome do estádio: 
+					<select name="estadio" id="estadio">
 						<?php
 							include("conexao.php");
 
-							$consulta="SELECT nome FROM estadio";
+							$consulta="SELECT nome_estadio FROM estadio";
 							$resultado=mysqli_query($conexao,$consulta);
 
 							while($linha=mysqli_fetch_assoc($resultado)){
-								echo"<option value='".$linha["nome"]."'>".$linha["nome"]."</option>";
+								echo"<option value='".$linha["nome_estadio"]."'>".$linha["nome_estadio"]."</option>";
 							}
 						?>
 					</select>
+					<br/>
 					Filtrar pelo time do estádio: 
 					<select name="time" id="time">
 						<?php
-							include("conexao.php");
-
-							$consulta="SELECT nome FROM time";
+							$consulta="SELECT nome_time FROM time";
 							$resultado=mysqli_query($conexao,$consulta);
 
 							while($linha=mysqli_fetch_assoc($resultado)){
-								echo"<option value='".$linha["nome"]."'>".$linha["nome"]."</option>";
+								echo"<option value='".$linha["nome_time"]."'>".$linha["nome_time"]."</option>";
 							}
 						?>
 					</select>
 					<button class="btn btn-dark ml-3" id="filtro">Filtrar</button>
+					
 				</div>
 					<br/>
-				<div id="estadios" class="container border border-dark" style="heigth:100px;"></div>
+				<div id="estadios" class="container border border-dark"></div>
 			</div>
 		</div>
 	</body>
