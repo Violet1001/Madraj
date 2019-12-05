@@ -1,7 +1,6 @@
 		<?php include("head.inc"); ?>
 		<title>Home</title>
 	</head>
-
 	<body>
 		<div class="container-fluid">
 			<div id="filtro">
