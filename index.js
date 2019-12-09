@@ -3,6 +3,7 @@ var voltar=0;
 $(function(){
 	carrega_estadios(0);
 	function carrega_estadios(p){
+		$("body").css("background-image","url('./imagens/wallpaper-de-futebol.jpg'");
 		$.ajax({
 			url:"carrega_estadios.php",
 			type:"post",
@@ -11,7 +12,7 @@ $(function(){
 				console.log(a);
 				var imagens="<div id='imagens_estadio' class='row p-3'>"
 					for(i=0;a.length>i;i++){
-						imagens+="<img src='./estadios_img/"+a[i].nome_estadio+".jpg' valor='"+a[i].nome_estadio+"' class='mt-2 mb-2 col-md-6'/>";
+						imagens+="<img src='./estadios_img/"+a[i].nome_estadio+".jpg' valor='"+a[i].nome_estadio+"' class='mt-2 mb-2 col-md-3 w-25'/>";
 					}
 				imagens+="</div>";
 
@@ -24,6 +25,7 @@ $(function(){
 		});
 	}
 	$(document).on("click","img",function(){
+	$("body").css("background-image","url('./imagens/wallpaper.jpg'");
 		var valor=$(this).attr("valor");
 		$.ajax({
 			url:"carrega_estadios.php",
@@ -32,7 +34,7 @@ $(function(){
 			success:function(h){
 				console.log(h);
 				var imagens="<div id='imagens_estadio' class='table-responsive'>"
-					imagens+="<table class='table table-bordered m-1'>";
+					imagens+="<table class='table table-bordered m-2'>";
 						imagens+="<tr>";
 							imagens+="<td>";
 								imagens+="<img src='./estadios_img/"+h[0].nome_estadio+".jpg' valor='"+h[0].nome_estadio+"' class='mt-2 mb-2'/><br/>";
@@ -47,8 +49,9 @@ $(function(){
 
 				$("#estadios").html("");
 				$("#estadios").append(imagens);
+				$("table").css("color","white");
 				voltar=$("#opcoes").html();
-				
+
 				$("#opcoes").html("");
 				var botao="<button class='btn btn-dark' id='pesquisa_outro'>Pesquisar outro</button>";
 				$("#opcoes").html(botao);

@@ -3,12 +3,12 @@
 		<script src="index.js"></script>
 	</head>
 	<body>
-		<div class="container-fluid">
-			<h4 class="text-center">Filtro de estádios</h4>
-			<div id="filtro">
-				<div class="container border border-dark p-3 text-center" id="opcoes">
+		<div class="container" id="fon">
+			<h2 class="text-center">Filtro de estádios</h2>
+			<div id="filtro" class="border border-primary p-2 text-center">
+				<div class="container " id="opcoes">
 					Filtrar pelo nome do estádio: 
-					<select name="estadio" id="estadio">
+					<select name="estadio" id="estadio" class="mt-3">
 						<option></option>
 						<?php
 							include("conexao.php");
@@ -23,7 +23,7 @@
 					</select>
 					<br/>
 					Filtrar pelo time do estádio: 
-					<select name="time" id="time">
+					<select name="time" id="time" class="m-2">
 						<option></option>
 						<?php
 							$consulta="SELECT nome_time FROM time";
@@ -34,12 +34,11 @@
 							}
 						?>
 					</select>
-					<button class="btn btn-dark ml-3" id="filtrar">Filtrar</button>
-					
 				</div>
+				<button class="btn btn-primary mt-3" id="filtrar">Filtrar</button>
 			</div>
 			<br/>
-				<div id="estadios" class="container border border-dark"></div>
+				<div id="estadios" class="container border border-primary m-3"></div>
 		</div>
 	</body>
 </html>

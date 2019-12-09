@@ -10,3 +10,4 @@
 <script src="bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="estilos.css"/>
